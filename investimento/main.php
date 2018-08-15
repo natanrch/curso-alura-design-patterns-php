@@ -11,7 +11,7 @@ spl_autoload_register("autoload");
 
 $conta = new Conta(2000);
 
-$investimento = new InvestimentoConservador;
+$investimento = new InvestimentoModerado;
 
 $realizador = new RealizadorDeInvestimentos;
 
