@@ -17,13 +17,27 @@ spl_autoload_register("autoload");
 // require_once 'ICCC.php';
 
 
-$orcamento = new Orcamento(10000);
+// $orcamento = new Orcamento(10000);
 
-$icms = new ICCC;
+// $icms = new ICCC;
 
-$calculadorDeImposto = new CalculadorDeImpostos();
+// $calculadorDeImposto = new CalculadorDeImpostos();
 
-$calculadorDeImposto->calcula($orcamento,$icms);
-echo "<br />";
+// $calculadorDeImposto->calcula($orcamento,$icms);
+// echo "<br />";
 
+$calculador = new CalculadorDeDescontos();
+
+$orcamento = new Orcamento(5000.0);
+$orcamento->addItem(new Item("CANETA", 250.0));
+$orcamento->addItem(new Item("LAPIS", 250.0));
+$orcamento->addItem(new Item("LAPIS", 300.0));
+$orcamento->addItem(new Item("LAPIS", 600.0));
+$orcamento->addItem(new Item("LAPIS", 25.0));
+ 
+;
+
+$desconto = $calculador->calcula($orcamento);
+
+echo $desconto;
 

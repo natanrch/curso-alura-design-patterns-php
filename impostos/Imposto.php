@@ -1,5 +1,5 @@
 <?php
-
+//Strategy Design Pattern
 require_once 'Orcamento.php';
 
 interface Imposto

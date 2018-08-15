@@ -1,7 +1,10 @@
 <?php
 
+require_once "Item.php";
+
 class Orcamento {
 	private $valor;
+	private $itens = array();
 
 	public function __construct($valor)
 	{
@@ -11,5 +14,14 @@ class Orcamento {
 	public function getValor()
 	{
 		return $this->valor;
+	}
+
+
+	public function getItens() {
+	    return $this->itens;
+	}
+
+	public function addItem(Item $item) {
+	    $this->itens[] = $item;
 	}
 }
