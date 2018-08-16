@@ -1,6 +1,6 @@
 <?php
 
-require_once "Desconto500Reais.php";
+require_once "Desconto.php";
 
 class Desconto500Reais implements Desconto {
 

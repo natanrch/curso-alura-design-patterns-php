@@ -28,12 +28,10 @@ spl_autoload_register("autoload");
 
 $calculador = new CalculadorDeDescontos();
 
-$orcamento = new Orcamento(5000.0);
+$orcamento = new Orcamento(100.0);
 $orcamento->addItem(new Item("CANETA", 250.0));
 $orcamento->addItem(new Item("LAPIS", 250.0));
-$orcamento->addItem(new Item("LAPIS", 300.0));
-$orcamento->addItem(new Item("LAPIS", 600.0));
-$orcamento->addItem(new Item("LAPIS", 25.0));
+
  
 ;
 
