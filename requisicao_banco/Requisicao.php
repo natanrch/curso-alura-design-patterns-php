@@ -6,7 +6,7 @@ class Requisicao
 
 	public function __construct($formato)
 	{
-		$this->formato = $formato
+		$this->formato = $formato;
 	}
 
 	public function getFormato()
