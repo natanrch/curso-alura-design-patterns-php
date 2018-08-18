@@ -9,13 +9,6 @@ function autoload($class) {
 
 spl_autoload_register("autoload");
 
-// require_once 'Orcamento.php';
-// require_once 'CalculadorDeImpostos.php';
-// require_once 'Imposto.php';
-// require_once 'ICMS.php';
-// require_once 'ISS.php';
-// require_once 'ICCC.php';
-
 
 // $orcamento = new Orcamento(10000);
 
@@ -26,16 +19,18 @@ spl_autoload_register("autoload");
 // $calculadorDeImposto->calcula($orcamento,$icms);
 // echo "<br />";
 
-$calculador = new CalculadorDeDescontos();
+$calculador = new CalculadorDeImpostos();
+$ICPP = new ICPP;
+$IKCV = new IKCV;
 
 $orcamento = new Orcamento(100.0);
-$orcamento->addItem(new Item("CANETA", 250.0));
-$orcamento->addItem(new Item("LAPIS", 250.0));
+$orcamento->addItem(new Item("CANETA", 150.0));
+$orcamento->addItem(new Item("LAPIS", 99.0));
 
  
 ;
 
-$desconto = $calculador->calcula($orcamento);
+$imposto = $calculador->calcula($orcamento, $IKCV);
 
-echo $desconto;
+echo $imposto;
 
