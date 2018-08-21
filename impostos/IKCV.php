@@ -18,12 +18,12 @@ class IKCV extends TemplateDeImpostoCondicional
 
 	public function maximaTaxacao(Orcamento $orcamento)
 	{
-		return $orcamento->getValor() * 0.10;
+		return $orcamento->getValor() * 0.10 + $this->calculoDoOutroImposto($orcamento);
 	}
 
 	public function minimaTaxacao(Orcamento $orcamento)
 	{
-		return $orcamento->getValor() * 0.05;
+		return $orcamento->getValor() * 0.05 + $this->calculoDoOutroImposto($orcamento);
 	}
 
 	private function temItemMaiorQue100Reais(Orcamento $orcamento)

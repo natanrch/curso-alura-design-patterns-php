@@ -4,7 +4,7 @@ require_once 'Imposto.php';
 
 //template design pattern
 
-abstract class TemplateDeImpostoCondicional implements Imposto
+abstract class TemplateDeImpostoCondicional extends Imposto
 {
 	public function calcula(Orcamento $orcamento)
 	{
