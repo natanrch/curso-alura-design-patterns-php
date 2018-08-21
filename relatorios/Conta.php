@@ -32,6 +32,6 @@ class Conta
 
 	public function getSaldo()
 	{
-		return $this->saldo();
+		return $this->saldo;
 	}
 }

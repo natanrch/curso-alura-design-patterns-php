@@ -18,6 +18,6 @@ class RelatorioComplexo extends TemplateRelatorio
 
 	public function criaCorpo(Conta $conta)
 	{
-		return 'Titular: '.$conta->getTitular().'<br>Agência: '$conta->getAgencia().'<br>Numero: '.$conta->getNumero().'<br> Saldo: '.$conta->getSaldo().'<br>';
+		return 'Titular: '.$conta->getTitular().'<br>Agência: '.$conta->getAgencia().'<br>Numero: '.$conta->getNumero().'<br> Saldo: '.$conta->getSaldo().'<br>';
 	}
 }
