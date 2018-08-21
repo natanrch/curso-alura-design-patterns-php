@@ -5,6 +5,12 @@ require_once 'TemplateDeImpostoCondicional.php';
 
 class IKCV extends TemplateDeImpostoCondicional
 {
+
+	public function __construct(Imposto $outroImposto = null)
+	{
+		parent::__construct($outroImposto);
+	}
+
 	public function deveUsarMaximaTaxacao(Orcamento $orcamento)
 	{
 		return $orcamento->getValor() >= 500 && $this->temItemMaiorQue100Reais($orcamento);

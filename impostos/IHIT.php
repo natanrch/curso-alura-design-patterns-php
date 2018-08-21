@@ -6,6 +6,11 @@ require_once 'TemplateDeImpostoCondicional.php';
 class IHIT extends TemplateDeImpostoCondicional
 {
 
+	public function __construct(Imposto $outroImposto = null)
+	{
+		parent::__construct($outroImposto);
+	}
+
 	private $itensNoOrcamento = array();
 
 	public function deveUsarMaximaTaxacao(Orcamento $orcamento)

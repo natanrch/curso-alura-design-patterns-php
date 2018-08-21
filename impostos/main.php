@@ -20,9 +20,8 @@ spl_autoload_register("autoload");
 // echo "<br />";
 
 $calculador = new CalculadorDeImpostos();
-$ICPP = new ICPP;
-$IKCV = new IKCV;
-$IHIT = new IHIT;
+$iss = new ISS(new ICMS);
+$ima = new IMA($iss);
 
 $orcamento = new Orcamento(1000.0);
 $orcamento->addItem(new Item("CANETA", 150.0));
@@ -32,7 +31,7 @@ $orcamento->addItem(new Item("LAPIS", 99.0));
  
 ;
 
-$imposto = $calculador->calcula($orcamento, $IHIT);
+$imposto = $calculador->calcula($orcamento, $ima);
 
 echo $imposto;
 
