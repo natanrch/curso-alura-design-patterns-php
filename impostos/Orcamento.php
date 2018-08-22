@@ -6,6 +6,7 @@ class Orcamento {
 	private $valor;
 	private $itens = array();
 	private $estado;
+	private $estadoAnterior;
 
 	public function __construct($valor)
 	{
@@ -28,6 +29,10 @@ class Orcamento {
 		$this->estado = $estado;
 	}
 
+	private function setEstadoAnterior(EstadoDeUmOrcamento $estadoAnterior)
+	{
+		$this->estadoAnterior = $estadoAnterior;
+	}
 
 	public function getItens() {
 	    return $this->itens;
@@ -39,7 +44,12 @@ class Orcamento {
 
 	public function aplicaDescontoExtra()
 	{
-		$this->estado->aplicaDescontoExtra($this);
+		if($this->estado != $this->estadoAnterior) {
+			$this->estado->aplicaDescontoExtra($this);
+		} else {;
+			throw new Exception("Desconto já aplicado nesse estado");
+		}
+		$this->setEstadoAnterior($this->estado);
 	}
 
 	public function aprova()

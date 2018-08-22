@@ -15,8 +15,13 @@ $orcamento->aplicaDescontoExtra();
 
 echo $orcamento->getValor().'<br>';
 
-$orcamento->reprova();
+$orcamento->aprova();
 $orcamento->aplicaDescontoExtra();
+
+echo $orcamento->getValor().'<br>';
+
+$orcamento->aplicaDescontoExtra();
+
 echo $orcamento->getValor();
 
 $orcamento->finaliza();
