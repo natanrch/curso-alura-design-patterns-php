@@ -9,19 +9,40 @@ function autoload($class) {
 
 spl_autoload_register("autoload");
 
-$orcamento = new Orcamento(1000);
+$item1 = new ItemBuilder();
+$item1->comNome('Tijolo');
+$item1->comValor(50);
 
-$orcamento->aplicaDescontoExtra();
+$item2 = new ItemBuilder();
+$item2->comNome('Cimento');
+$item2->comValor(50);
 
-echo $orcamento->getValor().'<br>';
+$notaBuilder = new NotaFiscalBuilder();
+$notaBuilder->paraEmpresa('Ximira e Peixola');
+$notaBuilder->comCnpj('1122233');
+$notaBuilder->comItem($item1->build());
+$notaBuilder->comItem($item2->build());
+$notaBuilder->comObservacao('Entregar no endereço tal');
+$notaBuilder->comDataDeEmissao();
 
-$orcamento->aprova();
-$orcamento->aplicaDescontoExtra();
+$nota = $notaBuilder->build();
+echo '<pre>';
+var_dump($nota);
 
-echo $orcamento->getValor().'<br>';
 
-$orcamento->aplicaDescontoExtra();
+// $orcamento = new Orcamento(1000);
 
-echo $orcamento->getValor();
+// $orcamento->aplicaDescontoExtra();
 
-$orcamento->finaliza();
+// echo $orcamento->getValor().'<br>';
+
+// $orcamento->aprova();
+// $orcamento->aplicaDescontoExtra();
+
+// echo $orcamento->getValor().'<br>';
+
+// $orcamento->aplicaDescontoExtra();
+
+// echo $orcamento->getValor();
+
+// $orcamento->finaliza();
