@@ -25,6 +25,11 @@ $notaBuilder->comItem($item2->build());
 $notaBuilder->comObservacao('Entregar no endereço tal');
 $notaBuilder->comDataDeEmissao();
 
+$notaBuilder->addAcao(new EnviadorDeEmail());
+$notaBuilder->addAcao(new NotaFiscalDAO());
+$notaBuilder->addAcao(new Multiplicador(5));
+
+
 $nota = $notaBuilder->build();
 echo '<pre>';
 var_dump($nota);
